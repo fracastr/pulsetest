@@ -1,0 +1,42 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Test.Models.Evento
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear Evento</title>
+</head>
+<body>
+    <h1>Crear Evento</h1>
+    <div class="container col-md-4">
+        <form action="/Home/Save" method="post">
+            <div class="form-group">
+                <label for="titulo">Título Evento</label>
+                <input name="Titulo" type="text" class="form-control" id="titulo" placeholder="Título del evento">
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripción</label>
+                <input name="Descripcion" type="text" class="form-control" id="descripcion" placeholder="Descripción del evento">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Fecha</label>
+                <div class='input-group date' id='datetimepicker4'>
+                    <input name="Fecha" type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(function () {
+                    $('#datetimepicker4').datetimepicker();
+                });
+            </script>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+
